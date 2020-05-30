@@ -68,6 +68,7 @@ def take_order():
     print_menu(menu)
     print_message(OUTRO)
 
+    # Take user order
     while True:
         user_input = input().lower()
         incorrect_entry = True
