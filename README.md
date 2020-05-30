@@ -6,3 +6,7 @@
 - The restaurant’s menu includes appetizers, entrees, desserts, and beverages;
 - User is prompted to place an order;
 - When a user enters an item, the program prints an acknowledgment of their input
+
+## Submission:
+
+Link to a PR: https://github.com/LeoKuhorev/snakes-cafe/pull/2
