@@ -11,6 +11,11 @@ def print_message(message):
 
 
 def print_menu(menu):
+    """For a given menu prints to console categories and  items within each category
+
+    Arguments:
+        menu {DICT} -- Menu dictionary
+    """
     for category, items in menu.items():
         print('\n')
         print(dedent(category.title()))
@@ -19,7 +24,7 @@ def print_menu(menu):
             print(item.title())
 
 
-def start_orders():
+def take_order():
     INTRO = """
     **************************************
     **    Welcome to the Snakes Cafe!   **
@@ -65,16 +70,22 @@ def start_orders():
 
     while True:
         user_input = input().lower()
+        incorrect_entry = True
 
         for items in menu.values():
             if user_input in items:
+                incorrect_entry = False
                 items[user_input] += 1
                 print(
                     f'** {items[user_input]} order of {user_input} have been added to your meal **')
+
+        if incorrect_entry:
+            print(
+                f'Sorry, there\'s no {user_input} item on our menu, please try again')
 
         if user_input == 'quit':
             break
 
 
 if __name__ == '__main__':
-    start_orders()
+    take_order()
