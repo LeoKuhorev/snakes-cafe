@@ -71,8 +71,11 @@ def take_order():
     # Take user order
     while True:
         user_input = input().lower()
-        incorrect_entry = True
 
+        if user_input == 'quit':
+            break
+        
+        incorrect_entry = True
         for items in menu.values():
             if user_input in items:
                 incorrect_entry = False
@@ -84,8 +87,6 @@ def take_order():
             print(
                 f'Sorry, there\'s no {user_input} item on our menu, please try again')
 
-        if user_input == 'quit':
-            break
 
 
 if __name__ == '__main__':
